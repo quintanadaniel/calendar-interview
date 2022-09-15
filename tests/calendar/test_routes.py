@@ -107,24 +107,26 @@ class TestCalendar(BasicsTestCase):
 
         self.assertEqual(200, response.status_code)
         self.assertCountEqual(
-            [{
-                "candidate": {
-                    "available_date": "2022-10-10T10:00:00",
-                    "role": "candidate",
-                    "username": "maria",
-                },
-                "interviewers": [
-                    {
+            [
+                {
+                    "candidate": {
                         "available_date": "2022-10-10T10:00:00",
-                        "role": "interviewer",
-                        "username": "carmen",
+                        "role": "candidate",
+                        "username": "maria",
                     },
-                    {
-                        "available_date": "2022-10-10T10:00:00",
-                        "role": "interviewer",
-                        "username": "rosa",
-                    },
-                ],
-            }],
+                    "interviewers": [
+                        {
+                            "available_date": "2022-10-10T10:00:00",
+                            "role": "interviewer",
+                            "username": "carmen",
+                        },
+                        {
+                            "available_date": "2022-10-10T10:00:00",
+                            "role": "interviewer",
+                            "username": "rosa",
+                        },
+                    ],
+                }
+            ],
             response.json,
         )

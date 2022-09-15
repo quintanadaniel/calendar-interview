@@ -6,7 +6,6 @@ from tests.basics_test_case import BasicsTestCase
 
 
 class TestCandidates(BasicsTestCase):
-
     def test_create_when_not_valid_datetime(self):
         request = {"username": "test candidate", "available_date": "2022-10-10 10:10"}
         response = self.client.post("/api/candidates", json=request)

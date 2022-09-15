@@ -1,11 +1,8 @@
 from http import HTTPStatus
 
-from apifairy import other_responses
-from apifairy import response, arguments
 from flask import Blueprint
 from flask import jsonify
 from flask import request
-from sqlalchemy.orm import aliased
 
 from application import db
 from application.calendar.schemas import CalendarSchema
@@ -31,16 +28,12 @@ def all_calendar_interviews():
         )
     if "," in request.args["candidate"]:
         return (
-            jsonify(
-                error="Maximum one candidate."
-            ),
+            jsonify(error="Maximum one candidate."),
             HTTPStatus.BAD_REQUEST,
         )
     if len(request.args["interviewers"].split(",")) > 2:
         return (
-            jsonify(
-                error="Maximum two interviewers in the list."
-            ),
+            jsonify(error="Maximum two interviewers in the list."),
             HTTPStatus.BAD_REQUEST,
         )
 

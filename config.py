@@ -26,9 +26,9 @@ class DevelopmentConfig(Config):
         "DEV_DATABASE_URL"
     ) or "sqlite:///" + os.path.join(basedir, "data-dev.sqlite")
     # API documentation
-    APIFAIRY_TITLE = 'Calendar-Interview API'
-    APIFAIRY_VERSION = '1.0'
-    APIFAIRY_UI = os.environ.get('DOCS_UI', 'elements')
+    APIFAIRY_TITLE = "Calendar-Interview API"
+    APIFAIRY_VERSION = "1.0"
+    APIFAIRY_UI = os.environ.get("DOCS_UI", "elements")
 
 
 class TestingConfig(Config):
