@@ -1,0 +1,195 @@
+{
+	"info": {
+		"_postman_id": "edf35be8-e2c1-4f5d-8bb3-d51276b5bef5",
+		"name": "xgeeks-challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "6264179-edf35be8-e2c1-4f5d-8bb3-d51276b5bef5"
+	},
+	"item": [
+		{
+			"name": "status",
+			"id": "f0c4f2ff-e0a9-4aff-8468-e6b0931a9278",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/status",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Candidates",
+			"id": "b596ec3e-be22-4556-af40-f831ed235844",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"maria\",\n    \"available_date\": \"2022-09-12\",\n    \"available_hour\": \"10:00\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/candidates",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"candidates"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Candidates",
+			"id": "20513a15-4613-4f7c-900b-163caf4535bb",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"maria\",\n    \"available_date\": \"2022-09-11 10:00\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/candidates/maria",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"candidates",
+						"maria"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Interviewers",
+			"id": "6a513f1c-b864-47b3-b323-1a0e03a82c38",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {},
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/atom+xml",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"carolina\",\n    \"available_date\": \"2022-09-12\",\n    \"available_hour\": \"10:00\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/interviewers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"interviewers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Interviewers",
+			"id": "14b11c48-dadc-4f66-81f8-67071220cd03",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/interviewers/pedro",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"interviewers",
+						"pedro"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Calendar",
+			"id": "3a62123e-8c25-4f8b-a0eb-b801dad713c1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/availableinterviews?candidate=maria&interviewers=carolina,ingrid",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"availableinterviews"
+					],
+					"query": [
+						{
+							"key": "candidate",
+							"value": "maria"
+						},
+						{
+							"key": "interviewers",
+							"value": "carolina,ingrid"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
